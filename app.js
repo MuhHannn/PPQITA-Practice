@@ -19,3 +19,5 @@ app.get("/", (req, res) => {
 app.listen(3000, () => {
   console.log("Hai Dev, Servermu udah jalan di localhost:3000");
 });
+// Jalannya dengan menulis bnode app.js di terminal
+// matikan server dengan ctrl+c
