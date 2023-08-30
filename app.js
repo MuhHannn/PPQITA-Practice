@@ -2,6 +2,8 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.json());
+
 //contoh simple sederhana
 
 /*
@@ -17,7 +19,9 @@ app.get("/", (req, res) => {
 
 // membuat data
 app.post("/", (req, res) => {
-  res.send("Post data");
+  let name = req.body.name;
+
+  res.send("Halo " + name);
 });
 
 // update data

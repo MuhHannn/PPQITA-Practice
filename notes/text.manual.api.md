@@ -9,11 +9,12 @@
 
 ## test secara manual dengan terminal
 
+- pastikan menjalankan server secara terpisah
 - untuk get
   `curl -X GET http://localhost:3000`
 - untuk update
   `curl -X PUT http://localhost:3000`
 - untuk tambah data
-  `curl -X POST http://localhost:3000`
+  `curl -X POST -H 'Content-Type': application/json" -d '{"name":"Muhammad Hanan"}' http://localhost:3000`
 - untuk delete
   `curl -X DELETE http://localhost:3000`
