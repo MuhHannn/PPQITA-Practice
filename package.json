@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "npx jest",
-    "start": "node(app.js)"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

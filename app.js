@@ -15,6 +15,21 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
+// membuat data
+app.post("/", (req, res) => {
+  res.send("Post data");
+});
+
+// update data
+app.put("/", (req, res) => {
+  res.send("Update data");
+});
+
+// hapus data
+app.delete("/", (req, res) => {
+  res.send("Delete data");
+});
+
 // Biar bisa running
 app.listen(3000, () => {
   console.log("Hai Dev, Servermu udah jalan di localhost:3000");
