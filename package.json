@@ -3,7 +3,7 @@
     "express": "^4.18.2"
   },
   "name": "ppqita-practice",
-  "description": "1. Install express di terminal `npm i express`\r    2.buat file dengan nama `app.js` jika sudah ada, abaikan",
+  "description": "latihan siswa kelas 2 ppqita`\r    2.buat file dengan nama `app.js` jika sudah ada, abaikan",
   "version": "1.0.0",
   "main": "app.js",
   "devDependencies": {},
