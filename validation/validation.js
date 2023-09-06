@@ -28,11 +28,15 @@ const nameValidation = (name) => {
 
 const ageValidation = (age) => {
   if (age <= 12) {
-    return { error: true, message: "umur harus lebih dari 12" };
+    return { error: true, message: "Underage" };
   }
 
-  if (age >= 80) {
-    return { error: true, message: "umur harus kurang dari 80" };
+  if (age >= 90) {
+    return { error: true, message: "Moreage" };
+  }
+
+  if (age != true) {
+    return { error: false, message: "Confirm", data: age };
   }
 };
 
