@@ -51,16 +51,16 @@ describe("test ageValidation", () => {
 
     expect(result).toEqual({
       error: true,
-      message: "umur harus lebih dari 12",
+      message: "Underage",
     });
   });
 
-  test("when less 12 should error", () => {
-    let result = ageValidation(80);
+  test("when more than 90 should error", () => {
+    let result = ageValidation(90);
 
     expect(result).toEqual({
       error: true,
-      message: "umur harus kurang dari 80",
+      message: "Moreage",
     });
   });
 });

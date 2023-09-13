@@ -6,10 +6,13 @@
   "description": "latihan siswa kelas 2 ppqita`\r    2.buat file dengan nama `app.js` jika sudah ada, abaikan",
   "version": "1.0.0",
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "supertest": "^6.3.3"
+  },
   "scripts": {
     "test": "npx jest",
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "node --watch app.js"
   },
   "repository": {
     "type": "git",
