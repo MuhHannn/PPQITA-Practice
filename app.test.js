@@ -1,9 +1,9 @@
-const request = require('supertest');
-const app = require('./app');
+const request = require("supertest");
+const app = require("./app");
 
-describe('Test in app', () => {
-  test('when get root should success', async () => {
-    let response = await request(app).get('/');
+describe("Test in app", () => {
+  test("when get root should success", async () => {
+    let response = await request(app).get("/");
 
     expect(response.status).toBe(200); // ===
     // '5' === 5 => false
@@ -11,49 +11,49 @@ describe('Test in app', () => {
     // '5' == 5 => true
   }, 5000);
 
-  test('when post data should success', async () => {
-    const data = { name: 'ariska', age: 23 };
-    let response = await request(app).post('/').send(data);
+  test("when post data should success", async () => {
+    const data = { name: "Hanan", age: 15 };
+    let response = await request(app).post("/").send(data);
 
     expect(response.status).toBe(200);
 
-    expect(response.body.data[0].name).toBe('ariska');
-    expect(response.body.data[0].age).toBe(23);
-    expect(typeof response.body.data[0].id).toBe('number');
+    expect(response.body.data[0].name).toBe("Hanan");
+    expect(response.body.data[0].age).toBe(16);
+    expect(typeof response.body.data[0].id).toBe("number");
   });
 
-  test('when test flow should success', async () => {
+  test("when test flow should success", async () => {
     // masukkan semua data
-    const data1 = { name: 'ariska', age: 23 };
-    const data2 = { name: 'hidayat', age: 30 };
-    const data3 = { name: 'ppqita', age: 20 };
+    const data1 = { name: "Hanan", age: 16 };
+    const data2 = { name: "Muhammad", age: 16 };
+    const data3 = { name: "ppqita", age: 20 };
 
-    await request(app).post('/').send(data1);
-    await request(app).post('/').send(data2);
-    await request(app).post('/').send(data3);
+    await request(app).post("/").send(data1);
+    await request(app).post("/").send(data2);
+    await request(app).post("/").send(data3);
 
     // ambil id (random)
-    let response = await request(app).get('/');
+    let response = await request(app).get("/");
 
     let id1 = response.body.data[0].id;
     let id2 = response.body.data[1].id;
     let id3 = response.body.data[2].id;
 
     // ubah data
-    const newData = { id: id3, name: 'surakarta' };
-    await request(app).put('/').send(newData);
+    const newData = { id: id3, name: "surakarta" };
+    await request(app).put("/").send(newData);
 
     // hapus data
-    await request(app).delete('/').send({ id: id2 });
+    await request(app).delete("/").send({ id: id2 });
 
     // ambil data terbaru
-    let response2 = await request(app).get('/');
+    let response2 = await request(app).get("/");
 
     // cocokkan
     expect(response2.body).toEqual({
       data: [
-        { id: id1, name: 'ariska', age: 23 },
-        { id: id3, name: 'surakarta' },
+        { id: id1, name: "Hanan", age: 16 },
+        { id: id3, name: "surakarta" },
       ],
     });
   });

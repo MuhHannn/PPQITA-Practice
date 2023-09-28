@@ -1,8 +1,10 @@
+// Todo 3: boleh jadi pr besok, mengubah
 const {
   createData,
   updateData,
   deleteData,
-  findByname,
+  findByName,
+  updateAllData,
 } = require("../crud/crud/CrudObjects");
 
 let dataMemory = [];
@@ -17,16 +19,33 @@ const showAllData = () => {
 };
 
 const getDataByName = (name) => {
-  return findByname(dataMemory, name);
+  return findByName(dataMemory, name);
 };
 
-const editDataName = (id, name) => {
+const editNamaData = (id, name) => {
   dataMemory = updateData(dataMemory, id, name);
+
   return dataMemory;
 };
 
+const editNamaUmurData = (id, name, age) => {
+  dataMemory = updateAllData(dataMemory, id, { name, age });
+
+  return dataMemory;
+};
+
+const isIdExist = (id) => {
+  return checkId(dataMemory, id);
+};
+
 const removeData = (id) => {
+  // ubah ke integer dari string
+  if (typeof id === "string") {
+    id = parseInt(id);
+  }
+
   dataMemory = deleteData(dataMemory, id);
+
   return dataMemory;
 };
 
@@ -36,4 +55,6 @@ module.exports = {
   editDataName,
   removeData,
   getDataByName,
+  editDataNameAge,
+  isIdExist,
 };

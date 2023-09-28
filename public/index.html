@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-4">
+  <div class="max-w-md mx-auto bg-white p-8 rounded shadow-md">
+    <h1 class="text-2xl font-semibold mb-4">List Data</h1>
+    <!-- tombol -->
+    <div class="my-5">
+      <a href="/create" class="mx-2 py-2 px-3 bg-green-100 hover:bg-green-300 rounded">Create</a>
+      <a href="/edit" class="mx-2 py-2 px-3 bg-yellow-100  hover:bg-yellow-300 rounded">Edit</a>
+      <a href="/delete" class="mx-2 py-2 px-3 bg-red-100 hover:bg-red-300 rounded">Hapus</a>
+    </div>
+
+    <!-- table -->
+    <table class="w-full border border-collapse">
+      <thead>
+        <tr>
+          <th class="border border-slate-500 text-left">Id</th>
+          <th class="border border-slate-500  text-left">Name</th>
+          <th class="border border-slate-500  text-left">Umur</th>
+        </tr>
+      </thead>
+      <tbody id="list-data">
+      </tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
